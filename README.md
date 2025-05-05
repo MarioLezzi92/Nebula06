@@ -1,27 +1,33 @@
-# 🧠 Nebula Level 06
-
-> Analisi, sfruttamento e mitigazione del livello 06 della wargame series [Nebula](https://exploit.education/nebula/).
-
----
-
-## 📌 Overview
-
-<!--
-Breve introduzione al livello e al contesto. 
-Esempio: Script SUID vulnerabile → escalation a flag06.
--->
+# 🌌 Nebula Level 06 
+Progetto svolto durante il corso di 'Programmazione Sicura' a.a. 2024/2025
+> Analisi, sfruttamento e mitigazione della vulnerabilità del livello 06 di Nebula : [https://exploit.education/nebula/](https://exploit.education/nebula/level-06/).
 
 ---
 
-## 🔍 Analisi del problema
+## 🧭 Panoramica
 
-- **Tipo di vulnerabilità:** <!-- Esempio: PATH injection -->
-- **Componente vulnerabile:** <!-- Esempio: Script bash con SUID -->
-- **Obiettivo:** <!-- Esempio: Ottenere flag dall’utente flag06 -->
+Il livello 06 di *Nebula* presenta un sistema vulnerabile in cui un utente (level06) può accedere alla home di un utente privilegiato (flag06), e leggere file `/etc/passwd` contenente l'hash della password.
+
+L’obiettivo è ottenere le credenziali di `flag06` sfruttando configurazioni errate o hash deboli.
 
 ---
 
-## 🧨 Exploit
+## 🔍 Analisi della vulnerabilità
 
-```bash
-# Comandi chiave utilizzati per l'exploit
+- **Tipo di vulnerabilità:**  
+  Weak password hashing & Weak Password Requirements
+
+- **Componente vulnerabile:**  
+  Uso dell’algoritmo NBS DES (via `crypt()`), storage dell’hash in `/etc/passwd`
+
+---
+
+
+## 🧑‍💻 Software utilizzati
+  Utilizzo di John the Ripper per il cracking della password 
+
+
+## 🚩 Ottenimento bandierina
+
+Il superamento del livello avviene sfruttando l'algoritmo di cifratura datato utilizzato per lo storage della password
+
