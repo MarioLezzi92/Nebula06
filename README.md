@@ -1,6 +1,6 @@
 # 🌌 Nebula Level 06 
 Progetto svolto durante il corso di 'Programmazione Sicura' a.a. 2024/2025
-> Analisi, sfruttamento e mitigazione della vulnerabilità del livello 06 di Nebula : [https://exploit.education/nebula/](https://exploit.education/nebula/level-06/).
+> Analisi, sfruttamento e mitigazione della vulnerabilità del livello 06 della macchina virtuale Nebula : [https://exploit.education/nebula/](https://exploit.education/nebula/level-06/).
 
 ---
 
