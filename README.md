@@ -1,33 +1,39 @@
 # 🌌 Nebula Level 06 
 Progetto svolto durante il corso di 'Programmazione Sicura' a.a. 2024/2025
-> Analisi, sfruttamento e mitigazione della vulnerabilità del livello 06 della macchina virtuale Nebula : [https://exploit.education/nebula/](https://exploit.education/nebula/level-06/).
+> Analisi, sfruttamento e mitigazione della vulnerabilità del livello 06 di Nebula (https://exploit.education/nebula/level-06/).
 
 ---
 
-## 🧭 Panoramica
+## Panoramica
 
-Il livello 06 di *Nebula* presenta un sistema vulnerabile in cui un utente (level06) può accedere alla home di un utente privilegiato (flag06), e leggere file `/etc/passwd` contenente l'hash della password.
+Il livello 06 di *Nebula* presenta un sistema vulnerabile in cui le credenziali vengono memorizzate utilizzando un **algoritmo di hash obsoleto**.
 
-L’obiettivo è ottenere le credenziali di `flag06` sfruttando configurazioni errate o hash deboli.
+L’obiettivo è ottenere l’accesso all’utente `flag06`, sfruttando la debolezza dell’hash e configurazioni errate del sistema.
 
 ---
 
-## 🔍 Analisi della vulnerabilità
+## Analisi della vulnerabilità
 
 - **Tipo di vulnerabilità:**  
-  Weak password hashing & Weak Password Requirements
+  Weak Password Hashing, Weak Password Requirements
 
 - **Componente vulnerabile:**  
-  Uso dell’algoritmo NBS DES (via `crypt()`), storage dell’hash in `/etc/passwd`
+  Uso dell’algoritmo **NBS DES** (via `crypt()`), con hash salvato in chiaro nel file `/etc/passwd`
 
 ---
 
 
-## 🧑‍💻 Software utilizzati
-  Utilizzo di John the Ripper per il cracking della password 
+##  Strumenti utilizzati
+- **John the Ripper** — per il cracking dell’hash di `flag06`  
 
 
-## 🚩 Ottenimento bandierina
+## 🚩Ottenimento bandierina
 
-Il superamento del livello avviene sfruttando l'algoritmo di cifratura datato utilizzato per lo storage della password
+Il superamento del livello avviene sfruttando la **debolezza dell’algoritmo NBS DES** utilizzato per l’hash della password.  
+Una volta recuperata la password di `flag06`, è possibile ottenere la bandierina eseguendo il comando `getflag` con i privilegi dell’utente target.
 
+---
+
+### Autori
+  - [Daniele Dello Russo] (https://github.com/Presidente10)
+  - [Mario Lezzi] (https://github.com/MarioLezzi92)
