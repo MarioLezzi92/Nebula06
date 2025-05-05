@@ -35,5 +35,5 @@ Una volta recuperata la password di `flag06`, è possibile ottenere la bandierin
 ---
 
 ### Autori
-  - [Daniele Dello Russo] (https://github.com/Presidente10)
-  - [Mario Lezzi] (https://github.com/MarioLezzi92)
+  - Daniele Dello Russo (https://github.com/Presidente10)
+  - Mario Lezzi (https://github.com/MarioLezzi92)
